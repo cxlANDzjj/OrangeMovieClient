@@ -1,0 +1,28 @@
+<!--pages/position/position.wxml-->
+<view class="head">
+  <icon type="search" size="13"></icon>
+  <input placeholder="输入城市中文名或拼音" placeholder-class="placeholder" />
+</view>
+
+<scroll-view scroll-y='true' class='scroll-y' bindtap='selectCity' scroll-into-view='{{toIndex}}'>
+  <view class="title">定位城市</view>
+  <view class='cities'>
+    <view class="city" data-set="{{position}}">{{position}}</view>
+  </view>
+  <block wx:if="{{recent.length>0}}">
+    <view class="title">最近访问的城市</view>
+    <view class="cities">
+      <view wx:for="{{recent}}" class="city" data-set="{{item}}" wx:key='property'>{{item}}</view>
+    </view>
+  </block>
+  <view wx:for="{{cities}}" wx:key="property">
+    <view class="title" id="{{item.class}}">{{item.class}}</view>
+    <view class="{{index==0?'cities':''}}">
+      <view wx:for="{{item.cities}}" wx:key="property" class="city" data-set="{{item}}">{{item}}</view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="slibar" catchtap="scrollTo">
+  <view wx:for="{{['A','B','C','D','E','F','G','H','J','K','L','M','P','Q','R','S','T','W','X','Y','Z']}}" data-to="{{item}}" wx:key='property' class='slibar-item'>{{item}}</view>
+</view>

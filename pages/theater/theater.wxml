@@ -1,0 +1,7 @@
+<!--pages/theater/theater.wxml-->
+<import src="/templates/head.wxml"/>
+<import src="/templates/theaters.wxml"/>
+<template is="head" data="{{...head}}"/>
+<view class="body">
+  <template is="theaters" data="{{theaters}}"/>
+</view>

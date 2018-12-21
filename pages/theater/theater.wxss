@@ -1,0 +1,7 @@
+/* pages/theater/theater.wxss */
+@import "/templates/head.wxss";
+@import "/templates/theaters.wxss";
+
+.body {
+  padding-left: 30rpx;
+}

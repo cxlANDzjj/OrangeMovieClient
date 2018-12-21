@@ -1,0 +1,80 @@
+/* pages/profile/tickets/tickets.wxss */
+
+page {
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.ticket {
+  border: 2rpx #dcdcdc solid;
+  margin: 40rpx 10rpx;
+  height: 480rpx;
+  width: 400rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.movie-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1rpx #dcdcdc dashed;
+  width: 100%;
+  flex: auto;
+}
+
+.movie-info {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  font-size: 24rpx;
+  color: #6d6969;
+  /* margin-left: 34rpx; */
+}
+
+.movie-name {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.movie-intro {
+  margin-top: 34rpx;
+}
+
+.movie-effect {
+  margin-top: 10rpx;
+}
+
+.cover {
+  height:160rpx;
+  width:112rpx;
+  border-radius: 8rpx;
+}
+
+.seat-detail {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-left: 26rpx;
+  width: 100%;
+  font-size: 24rpx;
+  color: #6d6969;
+  flex: auto;
+}
+
+.theater-name {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: bold;
+}

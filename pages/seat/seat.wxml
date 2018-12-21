@@ -1,0 +1,77 @@
+<!--pages/seat/seat.wxml-->
+<view class='head'>
+  <view class='shop'>
+    <view class='shop-name'>{{shop.theater}}</view>
+    <view class='movie-info'>
+      <text class="time">{{shop.start}}</text>
+      <text class="effects">{{shop.effect}}</text>
+    </view>
+  </view>
+
+  <view class='tips'>
+    <view class='tip-item'>
+      <image src="/img/photo/seat-0.png" class="seat"></image>
+      <text>可选</text>
+    </view>
+    <view class='tip-item'>
+      <image src="/img/photo/seat-1.png" class="seat"></image>
+      <text>已售</text>
+    </view>
+    <view class='tip-item'>
+      <image src="/img/photo/seat-2.png" class="seat"></image>
+      <text>已选</text>
+    </view>
+  </view>
+</view>
+
+<view class='room-wrap'>
+  <view class='scene' style='transform:translateX({{deltaX}}px)'>
+    <view class='room-name'>{{shop.hall}}</view>
+  </view>
+  <view class="columns" style="transform: translateY({{deltaY}}px)">
+    <view class="column-id" wx:for="{{columns}}" wx:key='property'>{{item}}</view>
+  </view>
+  <view class="map {{touching?'willchange':''}}" bindtouchstart="scrollStart" bindtouchmove="scrollMove" bindtouchend="scrollEnd" style="transform: translate({{deltaX}}px,{{deltaY}}px)">
+    <view class='row' wx:for='{{map}}' wx:for-item="row" wx:for-index='i' wx:key='property'>
+      <view class='col' wx:for='{{row}}' wx:for-index='j' wx:key='property'>
+        <view wx:if="{{item==0}}" class="seat-img"></view>
+        <image src="/img/photo/seat-0.png" wx:if="{{item==1}}" class="seat-img" catchtap="selectSeat" data-i="{{i}}" data-j="{{j}}"></image>
+        <image src="/img/photo/seat-1.png" wx:if="{{item==3}}" class="seat-img"></image>
+        <image catchtap="cancelSeat" src="/img/photo/seat-2.png" wx:if="{{item==2}}" class="seat-img" data-i="{{i}}" data-j="{{j}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='buy'>
+  <view class="seats-info">
+    <view class="seats-title">已选座位</view>
+    <view class="seats-wrap">
+      <view class="seat-item" wx:for="{{selectedSeats}}" wx:key='property'>
+        <view class="seat-name">{{item}}</view>
+        <view class="seat-cancel"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="confirm-wrap" hidden="{{!selected}}">
+    <view class="total" >
+      <view class="price-wrap">
+        <view class="price">{{selected*shop.price}}</view>
+        <view class="price-tail">元</view>
+      </view>
+      <view class="price-eval">{{shop.price}}x{{selected}}</view>
+    </view>
+    <button class="confirm" bindtap='pay'>确认选座</button>
+  </view>
+  <view class="confirm-wrap" hidden="{{selected}}">
+    <view class="total" >
+      <view class="price-wrap">
+        <view class="price">0</view>
+        <view class="price-tail">元</view>
+      </view>
+      <view class="price-eval">票价{{shop.price}}</view>
+    </view>
+    <view class="confirm warning">请先选座</view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/profile/tickets/tickets.wxml-->
+<view class='container'>
+  <view class='ticket' wx:for="{{tickets}}" wx:key='property'>
+    <view class='movie-detail'>
+      <view class='cover-wrap'>
+        <image src='{{item.ticket.cover}}' class='cover'></image>
+      </view>
+      <view class='movie-info'>
+        <view class='movie-name'>
+          {{item.ticket.movie}}
+        </view>
+        <view class='movie-intro'>
+          {{item.ticket.info}}
+        </view>
+        <view class='movie-effect'>
+          {{item.ticket.effect}}
+        </view>
+      </view>
+    </view>
+    <view class='seat-detail'>
+      <view class='theater-name'>
+        {{item.ticket.theater}}
+      </view>
+      <view class='seat-info'>
+        <view class='date'>
+          日期：{{item.ticket.date}}
+        </view>
+        <view class='time'>
+          时间：{{item.ticket.start}} - {{item.ticket.end}}
+        </view>
+        <view class='hall-seat'>
+          座位：{{item.ticket.hall}}   {{item.ticket.row}}排-{{item.ticket.col}}号
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

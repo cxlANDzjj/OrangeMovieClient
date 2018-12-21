@@ -1,0 +1,10 @@
+<!--pages/theater/list/list.wxml-->
+<import src="/templates/theaters.wxml"/>
+<view class='head'>
+  <scroll-view scroll-x class='scroll-x'>
+    <view wx:for="{{weekday}}" wx:key="*this" class="scroll-x-item {{selectedIndex==index? 'selected':''}}" id="{{index}}" catchtap="selectDate">{{item}}</view>
+  </scroll-view>
+</view>
+<view class="body">
+  <template is="theaters" data="{{theaters,movie}}"/>
+</view>

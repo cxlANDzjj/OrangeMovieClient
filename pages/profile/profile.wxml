@@ -1,0 +1,11 @@
+<!--pages/profile/profile.wxml-->
+<view></view>
+<view class="wrap">
+  <navigator class="item" url='./tickets/tickets'>我的订单</navigator>
+  <view class="item last">我的评论</view>
+</view>
+<view class="wrap">
+  <view class="item">想看的电影</view>
+  <view class="item last">看过的电影</view>
+</view>
+<view></view>

@@ -1,0 +1,33 @@
+<!--pages/movies/index.wxml-->
+<import src='/templates/head.wxml'/>
+<template is="head" data="{{...head}}"/>
+
+<block wx:for="{{movieList}}" wx:key="property">
+  <navigator url='./detail/detail?name={{item.name}}&id={{item.pk}}'>
+    <view class='movie-item'>
+      <image src="{{item.cover}}" style="height:172rpx;width:122rpx;"></image>
+      <view class='intro-wrap'>
+        <view class='intro'>
+          <view style='font-size:28rpx; font-weight: bold; color:#232323'>{{item.name}}</view>
+          <view style="font-size:22rpx; color:#666666">类型:{{item.tags}}</view>
+          <view style="font-size:22rpx;white-space:nowrap;text-overflow:ellipsis;overflow:hidden; color:#666666">主演:{{item.actors}}</view>
+          <!-- <view style="font-size:22rpx; color:#A0A0A0;" wx:if="{{item.on_sale}}">今天{{item.counts[0]}}家影院放映{{item.counts[1]}}场</view>
+          <view style="font-size:22rpx; color:#A0A0A0;" wx:else>{{item.dataline}}</view> -->
+          <view style="font-size:22rpx; color:#A0A0A0;">{{item.release_date}} 上映</view>
+        </view>
+        <view class='sell'>
+          <view class='rating' wx:if='{{item.on_sale}}'>
+            <text>{{item.rating}}</text>
+            <text>分</text>
+          </view>
+          <view class='rating' wx:else>
+            <text>{{item.popularity}}</text>
+            <text>人气</text>
+          </view>
+          <navigator url='/pages/theater/list/list?title={{item.name}}&id={{item.pk}}' class='sell-nav' wx:if="{{item.on_sale}}" hover-stop-propagation='true'>购票</navigator>
+          <navigator url='/pages/theater/list/list?title={{item.name}}&id={{item.pk}}' class='sell-nav pre' wx:else  hover-stop-propagation='true'>预售</navigator>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</block>

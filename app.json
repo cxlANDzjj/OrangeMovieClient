@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/movies/index",
+    "pages/search/search",
+    "pages/position/position",
+    "pages/theater/theater",
+    "pages/explore/explore",
+    "pages/profile/profile",
+    "pages/movies/detail/detail",
+    "pages/theater/list/list",
+    "pages/shop/shop",
+    "pages/seat/seat",
+    "pages/pay/pay",
+    "pages/profile/tickets/tickets"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF7F50",
+    "navigationBarTitleText": "橙子电影",
+    "navigationBarTextStyle": "white"
+  },
+  "qqmap-key": "OWVBZ-HJYK5-GZKIT-QVXGO-27V7H-IDBBX",
+  "tabBar": {
+    "color": "#6A6767",
+    "selectedColor": "#FF7F50",
+    "backgroundColor": "#F5F5F5",
+    "list": [
+      {
+        "pagePath": "pages/movies/index",
+        "text": "首页",
+        "iconPath": "img/tab/movie0.png",
+        "selectedIconPath": "img/tab/movie.png"
+      },
+      {
+        "pagePath": "pages/theater/theater",
+        "text": "影院",
+        "iconPath": "img/tab/theater0.png",
+        "selectedIconPath": "img/tab/theater.png"
+      },
+      {
+        "pagePath": "pages/explore/explore",
+        "text": "探索",
+        "iconPath": "img/tab/explore0.png",
+        "selectedIconPath": "img/tab/explore.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "img/tab/user0.png",
+        "selectedIconPath": "img/tab/user.png"
+      }
+    ]
+  }
+}

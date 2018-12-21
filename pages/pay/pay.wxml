@@ -1,0 +1,5 @@
+<!--pages/pay/pay.wxml-->
+<view class='pay'>
+  <text>购票成功</text>
+  <view bindtap='gohome' class='nav'>回到首页</view>
+</view>

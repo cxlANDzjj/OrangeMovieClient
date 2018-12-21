@@ -1,0 +1,14 @@
+<template name='head'>
+<view class='head'>
+  <navigator url="/pages/position/position?city={{currentCity}}" class="head-poi" hover-class="none">
+    <view class="poi">
+      <view>{{currentCity}}</view>
+      <view class="poi-arrow"></view>
+    </view>
+  </navigator>
+  <navigator url="/pages/search/search" class="head-searchbox" hover-class="none">
+    <icon type="search" size="13" style="margin-right:10rpx;"></icon>
+    <view>{{placeholder}}</view>
+  </navigator>
+</view>
+</template>

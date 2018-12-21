@@ -1,0 +1,68 @@
+<!--pages/movies/detail/detail.wxml-->
+<image src="{{details.cover}}" class="filter"></image>
+
+<view class='head'>
+  <view class='intro-wrap'>
+    <image src="{{details.cover}}" class="cover"></image>
+    <view class='intro'>
+      <view class='title-score'>
+        <view>
+          <view class='title'>{{details.name}}</view>
+          <view class='enName'>{{details.ename}}</view>
+        </view>
+        <navigator url='' class='rate-nav'>{{details.rating}}分</navigator>
+        <navigator url='' class='rate-nav' style='margin-left: 20rpx;background: #99cc99;'>想看</navigator>
+      </view>
+      <view>
+        <view wx:for="{{details.des}}" wx:key="property" class="info-area">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>  
+</view>
+
+<view catchtap="expand">
+  <view class="plot {{expanded?'':'expand'}}">{{details.plot}}</view>
+  <view class="arrow {{expanded?'uparrow':'downarrow'}}"></view>
+</view>
+
+<view class="actor-wrap">
+  <view class="actor-title">演职人员</view>
+  <scroll-view scroll-x style="width:100%">
+    <view class="actor-list">
+      <view wx:for="{{details.members}}" class="actor-item"  wx:key="property">
+        <image src="{{item.actor.photo}}" class="actor-img"></image>
+        <view class="actor-text">{{item.actor.name}}</view>
+        <view style="color:#9B9B9B;" class="actor-text">{{item.role}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="comment-area">
+  <view class="comment-head">
+    <view class="comment-title">观众评论</view>
+    <navigator url="" class="post-comment">评论</navigator>
+  </view>
+  <view>
+    <view wx:for="{{comments}}" class="comment-item" wx:key="property">
+      <view class="avatar">
+        <image src="{{item.author.avatar}}" style="width:58rpx;height:58rpx; border-radius: 50%;"></image>
+      </view>
+      <view class="comment-detail">
+        <view>
+          <view class="nick-name">{{item.author.name}}</view>
+          <view></view>
+        </view>
+        <view class="comment">{{item.content}}</view>
+        <view class="comment-date">
+          <view>{{item.post_date}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <navigator url=""></navigator>
+</view>
+
+<navigator url="/pages/theater/list/list?title={{details.name}}&id={{details.id}}" class="buy">购票</navigator>

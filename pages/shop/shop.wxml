@@ -1,0 +1,57 @@
+<!--pages/shop/shop.wxml-->
+<view class="head">
+  <view class="shop">
+    <view class="name">{{theater}}</view>
+    <view class="adress">{{shop.address}}</view>
+  </view>
+  <view class="map">
+    <view class="line"></view>
+    <view class="map-wrap" bindtap="openMap">
+      <image src="/img/tab/mapmark.png" style="width:36rpx;height:36rpx;"></image>
+      <view class="map-let">地图</view>
+    </view>
+  </view>
+</view>
+
+<view class="select-box">
+  <scroll-view scroll-x class="movies" style="height:280rpx;">
+    <view wx:for="{{shop.movies}}" class="movies-item" bindtap="selectMovie" id="{{index}}" wx:key='property'>
+      <image src="{{item.cover}}" class="movies-img {{selectedIndex==index?'movies-img-active':''}}"></image>
+    </view>
+  </scroll-view>
+  <image src="{{cover}}" class="back-img"></image>
+</view>
+
+<view class='sell-area'>
+  <view class='movie-info'>
+    <view class="tr">
+      <view class="title">{{selectedMovie.name}}</view>
+      <view class="rating">{{selectedMovie.rating}}分</view>
+    </view>
+    <view class="intro">{{selectedMovie.info}}</view>
+  </view>
+
+  <view style='margin-top: 10rpx;'>
+    <scroll-view scroll-x class='scroll-x'>
+      <view wx:for="{{weekday}}" wx:key="*this" class="scroll-x-item {{selectedDay==index? 'selected':''}}" id="{{index}}" catchtap="selectDate">{{item}}</view>
+    </scroll-view>
+    <view class='scenes'>
+      <navigator url='/pages/seat/seat?id={{item.pk}}' class='scene' wx:for="{{selectedMovie.scenes}}" wx:key='property'>
+        <view class='column1'>
+          <view class="start-time">{{item.start}}</view>
+          <view class="end-time">{{item.end}}散场</view>
+        </view>
+        <view class="column2">
+          <view class="effects">{{item.effect}}</view>
+          <view class="room">{{item.hall}}</view>
+        </view>
+        <view class="column3">
+          <view class="price">{{item.price}}<text class="price-tail">元</text></view>
+        </view>
+        <view class="buy">
+          购票
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

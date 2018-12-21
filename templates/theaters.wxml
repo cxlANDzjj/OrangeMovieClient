@@ -1,0 +1,22 @@
+<template name='theaters'>
+  <view wx:for="{{theaters}}" wx:key="property">
+    <navigator url='/pages/shop/shop?id={{item.pk}}&theater={{item.name}}{{movie?"&movie="+movie:""}}' class='theater'>
+      <view class="shop">
+        <view class="theater-name">{{item.name}}</view>
+        <view class="price">
+          <text class="price-value">{{item.lowest_price}}</text>
+          <text class="price-tail">元起</text>
+        </view>
+      </view>
+      <view class="adress">{{item.address}}</view>
+      <!-- <view class="tips">
+        <view wx:for="{{item.tips.blue}}" class="blue tip" wx:key="property">{{item}}</view>
+        <view wx:for="{{item.tips.orang}}" class="orang tip" wx:key="property">{{item}}</view>
+      </view> -->
+      <view class="discount" wx:if="{{item.reduction}}">
+        <view class="hui">惠</view>
+        <view>{{item.reduction}}</view>
+      </view>
+    </navigator>
+  </view>
+</template>

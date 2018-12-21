@@ -1,0 +1,7 @@
+<!--pages/search/search.wxml-->
+<view class='searchbox'>
+  <view class='input-wrap'>
+    <icon type='search' size='14'></icon>
+    <input class='input' placeholder='{{search.placeholder}}'></input>
+  </view>
+</view>

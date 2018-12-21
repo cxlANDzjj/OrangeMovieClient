@@ -1,0 +1,28 @@
+/* pages/theater/list/list.wxss */
+@import "/templates/theaters.wxss";
+
+.head{
+  margin-bottom: 2rpx;
+}
+
+.scroll-x {
+  white-space: nowrap;
+  border-bottom: 1rpx #DCDCDC solid;
+}
+
+.scroll-x-item {
+  display: inline-block;
+  font-size: 26rpx;
+  padding: 20rpx 20rpx 28rpx;
+  color: #676767;
+}
+
+.selected {
+  color:#ff7f50;
+  border-bottom: 4rpx #ff7f50 solid;
+}
+
+.body {
+  padding-left: 30rpx;
+}
+

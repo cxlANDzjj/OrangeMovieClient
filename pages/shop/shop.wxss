@@ -1,0 +1,194 @@
+/* pages/shop/shop.wxss */
+.head {
+  padding: 30rpx;
+  display: flex;
+  height: 124rpx;
+  align-items: center;
+}
+
+.shop {
+  flex: 1;
+}
+
+.name {
+  font-size: 30rpx;
+}
+
+.adress {
+  font-size: 24rpx;
+  color: #a1a1a1;
+  margin-top: 16rpx;
+}
+
+.line {
+  height: 50rpx;
+  width: 4rpx;
+  background-color: #e5e5e5;
+  margin-right: 26rpx;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+}
+
+.map-let {
+  font-size: 22rpx;
+  color: #9d9d9d;
+  text-align: center;
+}
+
+
+.select-box {
+  position: relative;
+}
+
+.movies {
+  white-space: nowrap;
+}
+
+.movies-img {
+  margin-top:46rpx; 
+  height:216rpx;
+  width:152rpx;
+}
+
+.movies-img-active {
+  margin-top: 20rpx;
+  height: 242rpx;
+  width: 172rpx;
+  border: 2rpx #fff solid;
+}
+
+.movies-item {
+  display: inline-block;
+  margin: 0 10rpx;
+}
+
+.back-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -10;
+  filter: blur(10px);
+  width:100%;
+  height:280rpx;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 112rpx;
+  border-bottom: 1rpx #DCDCDC solid;
+}
+
+.tr {
+  display: flex;
+  margin-top: 26rpx;
+}
+
+.title{
+  font-size: 30rpx;
+}
+
+.rating {
+  width: 70rpx;
+  height: 36rpx;
+  background: #f0a431;
+  color: #ffffff;
+  margin-left: 50rpx;
+  border-radius: 8rpx;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 22rpx;
+}
+
+.intro {
+  color: #A8A8A8;
+  font-size: 26rpx;
+  margin-top: 12rpx;
+}
+
+.scroll-x {
+  white-space: nowrap;
+  border-bottom: 1rpx #DCDCDC solid;
+}
+
+.scroll-x-item {
+  display: inline-block;
+  font-size: 26rpx;
+  padding: 20rpx 20rpx 28rpx;
+  color: #676767;
+}
+
+.selected {
+  color:#ff7f50;
+  border-bottom: 4rpx #ff7f50 solid;
+}
+
+.scenes {
+  padding-left: 26rpx;
+}
+
+.scene {
+  display: flex;
+  border-bottom: 1rpx #DCDCDC solid;
+  height: 120rpx;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.column2 {
+  margin-left: 64rpx;
+  flex: 1;
+}
+
+.column3 {
+  display: flex;
+  align-items: center;
+}
+
+.start-time {
+  font-size: 30rpx;
+}
+
+.end-time {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 14rpx;
+}
+
+.effects {
+  font-size: 28rpx;
+}
+
+.room {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 14rpx;
+}
+
+.price {
+  font-size: 32rpx;
+  color: #ff7f50;
+}
+.price-tail {
+  font-size: 20rpx;
+  color: #ff7f50;
+}
+
+.buy {
+  width: 90rpx;
+  height: 50rpx;
+  background-color: #ff7f50;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  margin-right: 22rpx;
+  margin-left: 86rpx;
+  border-radius: 6rpx;
+}
+
